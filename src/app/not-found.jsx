@@ -17,7 +17,7 @@ export default function NotFound() {
               </h1>
             </div>
 
-            <div className='max-w-[46rem] space-y-4'>
+            <div className='max-w-184 space-y-4'>
               <p className='text-[clamp(0.938rem,0.884rem+0.268vw,1.125rem)] leading-relaxed text-[#4E3A2C] dark:text-[#D4C2B9] '>
                 Возможно, страница была удалена, временно недоступна или вы
                 допустили опечатку в адресе.
@@ -29,7 +29,7 @@ export default function NotFound() {
 
               <div className='mt-5 md:mt-8 flex flex-col items-center gap-3 md:gap-4 md:flex-row md:items-center md:justify-start'>
                 <Button
-                  className='w-max rounded-full px-10 md:px-12 py-4 md:py-[20px] text-[clamp(1rem,0.982rem+0.089vw,1.063rem)] font-semibold text-white transition bg-[#E08A48] hover:bg-[#CF7A39] dark:bg-[#F4B26E] dark:text-[#2B1F17] dark:hover:bg-[#F2C080] md:w-auto'
+                  className='w-max rounded-full px-10 md:px-12 py-4 md:py-5 text-[clamp(1rem,0.982rem+0.089vw,1.063rem)] font-semibold text-white transition bg-[#E08A48] hover:bg-[#CF7A39] dark:bg-[#F4B26E] dark:text-[#2B1F17] dark:hover:bg-[#F2C080] md:w-auto'
                   asChild>
                   <a href='/'>
                     <ArrowLeft className='h-4 w-4' />

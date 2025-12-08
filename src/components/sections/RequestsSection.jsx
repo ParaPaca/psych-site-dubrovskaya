@@ -36,10 +36,10 @@ export function RequestsSection() {
             <div
               key={label}
               className='flex flex-nowrap items-center gap-3 md:gap-4 rounded-full bg-white/95 pl-3 md:pl-4 pr-4 md:pr-5 py-2 md:py-3 shadow-[5px_10px_15px_rgba(160,92,51,0.2)] backdrop-blur dark:bg-[#000000]/95'>
-              <span className='flex h-[clamp(2.125rem,2.054rem+0.357vw,2.375rem)] w-[clamp(2.125rem,2.054rem+0.357vw,2.375rem)] flex-shrink-0 items-center justify-center rounded-full bg-[#F2DBC7] text-[#9C6B4F] dark:bg-[#433528] dark:text-[#F2C6A2]'>
+              <span className='flex h-[clamp(2.125rem,2.054rem+0.357vw,2.375rem)] w-[clamp(2.125rem,2.054rem+0.357vw,2.375rem)] shrink-0 items-center justify-center rounded-full bg-[#F2DBC7] text-[#9C6B4F] dark:bg-[#433528] dark:text-[#F2C6A2]'>
                 <Icon className='h-[clamp(1rem,0.929rem+0.357vw,1.25rem)] w-[clamp(1rem,0.929rem+0.357vw,1.25rem)]' />
               </span>
-              <p className='font-medium text-[#3B2C21] dark:text-[#F5E5DA] text-left leading-relaxed break-words whitespace-normal'>
+              <p className='font-medium text-[#3B2C21] dark:text-[#F5E5DA] text-left leading-relaxed wrap-break-word whitespace-normal'>
                 {label}
               </p>
             </div>

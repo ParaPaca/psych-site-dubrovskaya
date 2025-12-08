@@ -94,7 +94,7 @@ function ConsentGrid() {
           {column.map((item) => (
             <section key={item.title} className='space-y-2'>
               <div className='flex items-start gap-3'>
-                <Check className='mt-[3px] h-4 w-4 flex-shrink-0 text-[#3C7A4F]' />
+                <Check className='mt-[3px] h-4 w-4 shrink-0 text-[#3C7A4F]' />
                 <h2 className='font-lora font-semibold uppercase tracking-[0.02em] text-[clamp(0.938rem,0.866rem+0.357vw,1.188rem)] text-[#33251B] dark:text-white '>
                   {item.title}
                 </h2>

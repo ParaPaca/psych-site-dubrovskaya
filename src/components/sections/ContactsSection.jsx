@@ -10,7 +10,7 @@ import TelegramIcon from '../shared/TelegramIcon';
 const contacts = [
   {
     href: 'https://t.me/yana_dubrovsk',
-    label: '@yana_dubrovsk',
+    label: 'Telegram',
     icon: TelegramIcon,
   },
   {
@@ -44,9 +44,9 @@ export function ContactsSection() {
 
   return (
     <div className='relative'>
-      <div className='relative w-[100%] md:max-w-[1100px] m-auto'>
+      <div className='relative w-full md:max-w-[1100px] m-auto'>
         <svg
-          className='absolute top-[0px] left-[clamp(5rem,7.143rem+-4.464vw,3.125rem)] z-11 hidden md:block md:w-[clamp(7.5rem,3.929rem+7.44vw,10.625rem)] overflow-visible'
+          className='absolute top-0 left-[clamp(5rem,7.143rem+-4.464vw,3.125rem)] z-11 hidden md:block md:w-[clamp(7.5rem,3.929rem+7.44vw,10.625rem)] overflow-visible'
           width='179'
           height='218'
           viewBox='0 0 179 218'
@@ -70,7 +70,7 @@ export function ContactsSection() {
       </div>
       <SectionContainer
         id='contacts'
-        className='relative bg-[#FFF3EC] dark:bg-[#1B1B1B] max-md:pt-20 max-md:pb-50 md:pb-60 bg-gradient-to-b from-[#FFF3EC] to-[#F9DDC9] dark:from-[#1B1B1B] dark:to-[#000000]/20'>
+        className='relative bg-[#FFF3EC] dark:bg-[#1B1B1B] max-md:pt-20 max-md:pb-50 md:pb-60 bg-linear-to-b from-[#FFF3EC] to-[#F9DDC9] dark:from-[#1B1B1B] dark:to-[#000000]/20'>
         <div className='mx-auto text-center max-w-[680px]'>
           <h2 className='uppercase font-lora font-semibold text-[#322820] dark:text-white leading-tight text-[clamp(1.75rem,1.5rem+1.25vw,2.625rem)] '>
             Буду рада ответить на ваши вопросы
@@ -85,7 +85,7 @@ export function ContactsSection() {
             <Button
               key={label}
               asChild
-              className='group h-auto rounded-full bg-white/95 px-5 md:px-8 py-3 md:py-4 text-md font-semibold text-[#3B2C21] shadow-[0_16px_38px_rgba(160,92,51,0.1)] transition hover:-translate-y-px hover:text-[#ffffff] hover:bg-[#E2823A] dark:bg-[#000000]/50 dark:text-[#F5E5DA] dark:hover:bg-[#34261D]'
+              className='min-w-[172px] group h-auto rounded-full bg-white/95 px-5 md:px-8 py-3 md:py-4 text-md font-semibold text-[#3B2C21] shadow-[0_16px_38px_rgba(160,92,51,0.1)] transition hover:-translate-y-px hover:text-[#ffffff] hover:bg-[#E2823A] dark:bg-[#000000]/50 dark:text-[#F5E5DA] dark:hover:bg-[#34261D]'
               variant='ghost'>
               <a href={href} target='_blank' rel='noreferrer'>
                 <span className='flex items-center gap-3'>
@@ -96,7 +96,7 @@ export function ContactsSection() {
             </Button>
           ))}
         </div>
-        <p className='mt-8 md:mt-8 text-center text-[#8D7768] dark:text-[#BDAEA4]'>
+        <p className='mt-10 md:mt-12 text-center text-[#8D7768] dark:text-[#BDAEA4]'>
           Берегите себя, и до связи 💛
         </p>
         <div className='pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[clamp(6.25rem,5.179rem+5.357vw,9rem)] overflow-hidden'>

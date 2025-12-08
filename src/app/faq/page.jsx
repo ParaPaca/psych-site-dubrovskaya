@@ -102,9 +102,9 @@ function FaqContent({ item }) {
         {item.items.map((point) => (
           <li key={point.text} className='flex items-start gap-3'>
             {point.icon === 'cross' ? (
-              <XCircle className='mt-[4px] h-4 w-4 flex-shrink-0 text-[#CF4A33]' />
+              <XCircle className='mt-1 h-4 w-4 shrink-0 text-[#CF4A33]' />
             ) : (
-              <Check className='mt-[4px] h-4 w-4 flex-shrink-0 text-[#3C7A4F]' />
+              <Check className='mt-1 h-4 w-4 shrink-0 text-[#3C7A4F]' />
             )}
             <p className='text-[clamp(0.875rem,0.839rem+0.179vw,1rem)] leading-relaxed text-[#4E3A2C] dark:text-[#D4C2B9]'>
               {point.text}

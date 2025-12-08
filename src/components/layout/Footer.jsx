@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { SectionContainer } from '@/components/shared/SectionContainer';
-import { Send } from 'lucide-react';
 import { useRef, useCallback } from 'react';
 import { useGlobalMouseParallax } from '@/hooks/useGlobalMouseParallax';
 import WhatsAppIcon from '../shared/WhatsAppIcon';
@@ -104,9 +103,9 @@ export function Footer() {
           </a>
         </div>
       </SectionContainer>
-      <div className='relative w-[100%] md:max-w-[1100px] m-auto'>
+      <div className='relative w-full md:max-w-[1100px] m-auto'>
         <svg
-          className='absolute bottom-[40px] right-[clamp(5rem,7.143rem+-4.464vw,3.125rem)] z-11 hidden md:block md:w-[clamp(6.25rem,4.821rem+2.976vw,7.5rem)] overflow-visible'
+          className='absolute bottom-10 right-[clamp(5rem,7.143rem+-4.464vw,3.125rem)] z-11 hidden md:block md:w-[clamp(6.25rem,4.821rem+2.976vw,7.5rem)] overflow-visible'
           width='209'
           height='170'
           viewBox='0 0 209 170'
