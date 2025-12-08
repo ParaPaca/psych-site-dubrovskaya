@@ -35,7 +35,7 @@ const steps = [
 function ArrowSlot({ className = '', flip = false }) {
   return (
     <div
-      className={`hidden md:flex flex-shrink-0 items-center justify-center ${
+      className={`hidden md:flex shrink-0 items-center justify-center ${
         flip ? 'md:scale-x-[-1]' : ''
       } ${className}`}
       aria-hidden='true'>
@@ -65,7 +65,7 @@ function StepCard({ number, title, description, className = '' }) {
     <div
       className={`relative w-full md:max-w-[583px] rounded-3xl bg-white/95 p-4 md:p-6 shadow-[0_15px_30px_rgba(160,92,51,0.2)] dark:bg-[#1F1F1F] ${className}`}>
       <div className='flex items-start gap-3 md:gap-4'>
-        <div className='flex h-[clamp(2.25rem,2.107rem+0.714vw,2.75rem)] w-[clamp(2.25rem,2.107rem+0.714vw,2.75rem)] flex-shrink-0 items-center justify-center rounded-full bg-[#F2DBC7] text-[#9C6B4F] dark:bg-[#3B2A1F] dark:text-[#F2C6A2]'>
+        <div className='flex h-[clamp(2.25rem,2.107rem+0.714vw,2.75rem)] w-[clamp(2.25rem,2.107rem+0.714vw,2.75rem)] shrink-0 items-center justify-center rounded-full bg-[#F2DBC7] text-[#9C6B4F] dark:bg-[#3B2A1F] dark:text-[#F2C6A2]'>
           <span className='font-lora font-semibold text-[clamp(1rem,0.929rem+0.357vw,1.25rem)] leading-none'>
             {number}
           </span>

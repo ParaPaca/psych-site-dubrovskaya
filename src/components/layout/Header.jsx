@@ -4,7 +4,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Menu, Moon, Sun } from 'lucide-react';
+import { Menu, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 import {
@@ -21,6 +21,8 @@ import {
   NavigationMenuLink,
 } from '@/components/ui/navigation-menu';
 import Logo from '../shared/Logo';
+import MoonIcon from '../shared/MoonIcon';
+import SunIcon from '../shared/SunIcon';
 
 const extraItems = [
   { href: '/', label: 'Главная' },
@@ -39,7 +41,7 @@ const primaryDesktopItems = [
 export default function Header() {
   const pathname = usePathname();
   const [mounted, setMounted] = React.useState(false);
-  const [open, setOpen] = React.useState(false); // только для мобильного поповера
+  const [open, setOpen] = React.useState(false);
   const [hash, setHash] = React.useState('');
   const [isHidden, setIsHidden] = React.useState(false);
   const lastScrollY = React.useRef(0);
@@ -147,12 +149,12 @@ export default function Header() {
         <div
           className={cn(
             'relative flex items-center gap-4 max-md:rounded-b-0',
-            'bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80',
-            'dark:bg-[#1B1B1B]/90 dark:supports-[backdrop-filter]:bg-[#1B1B1B]/80',
+            'bg-white/90 backdrop-blur supports-backdrop-filter:bg-white/80',
+            'dark:bg-[#1B1B1B]/90 dark:supports-backdrop-filter:bg-[#1B1B1B]/80',
             'dark:shadow-[0_12px_30px_rgba(220,200,188,0.12)] shadow-[0_12px_30px_rgba(160,92,51,0.12)] dark:border-white/10',
             'px-4 py-3 md:px-6 '
           )}>
-          <Logo className='w-[40px]'/>
+          <Logo className='w-10' />
           <nav
             className='hidden flex-1 items-center justify-center gap-7 md:flex'
             aria-label='Главная навигация'>
@@ -162,7 +164,7 @@ export default function Header() {
                 href={item.href}
                 onClick={() => handleNavClick(item.href)}
                 className={cn(
-                  'w-fit text-[clamp(0.813rem,0.795rem+0.089vw,0.875rem)] min-w-min text-center tracking-[0.1em] font-medium transition-colors',
+                  'w-fit text-[clamp(0.813rem,0.795rem+0.089vw,0.875rem)] min-w-min text-center tracking-widest font-medium transition-colors',
                   'text-[#7E6352] hover:text-[#E17737]',
                   'dark:text-[#DCC8BC]/90 dark:hover:text-[#F4B26E]',
                   isActive(item.href) &&
@@ -178,11 +180,11 @@ export default function Header() {
                   <NavigationMenuTrigger
                     className={cn(
                       'border-0 bg-transparent px-0 py-0 cursor-pointer',
-                      'hover:!bg-transparent focus:!bg-transparent data-[state=open]:!bg-transparent data-[state=open]:!text-[#E17737]',
+                      'hover:bg-transparent! focus:bg-transparent! data-[state=open]:bg-transparent! data-[state=open]:text-[#E17737]!',
                       'focus-visible:ring-0 focus-visible:outline-none',
                       'text-[clamp(0.813rem,0.795rem+0.089vw,0.875rem)] tracking-[0.18em] font-medium',
                       'text-[#7E6352] hover:text-[#E17737]',
-                      'dark:!text-[#DCC8BC]/90 dark:hover:!text-[#F4B26E]',
+                      'dark:text-[#DCC8BC]/90! dark:hover:text-[#F4B26E]!',
                       isSecondaryActive &&
                         'text-[#E17737] dark:text-[#F4B26E] underline underline-offset-4 decoration-1'
                     )}>
@@ -203,9 +205,9 @@ export default function Header() {
                               onClick={() => handleNavClick(item.href)}
                               className={cn(
                                 'block rounded-lg px-3 py-2 text-[12px] font-medium tracking-[0.18em] transition-colors',
-                                'hover:!bg-[#F5E2D4]/60 focus:!bg-[#F5E2D4]/60 data-[state=open]:!bg-[#F5E2D4]/60 data-[state=open]:!text-[#E17737]',
-                                'text-[#7E6352] hover:bg-[#F5E2D4]/60 hover:!text-[#E17737]',
-                                'dark:!text-[#DCC8BC]/90 dark:hover:!bg-white/5 dark:hover:!text-[#F4B26E]',
+                                'hover:bg-[#F5E2D4]/60! focus:bg-[#F5E2D4]/60! data-[state=open]:bg-[#F5E2D4]/60! data-[state=open]:text-[#E17737]!',
+                                'text-[#7E6352] hover:bg-[#F5E2D4]/60 hover:text-[#E17737]!',
+                                'dark:text-[#DCC8BC]/90! dark:hover:bg-white/5! dark:hover:text-[#F4B26E]!',
                                 isActive(item.href) &&
                                   'bg-[#F5E2D4]/70 text-[#E17737] dark:bg-white/10 dark:text-[#F4B26E]'
                               )}>
@@ -231,16 +233,16 @@ export default function Header() {
                 'h-10 w-10 max-md:h-13 max-md:w-13 rounded-full cursor-pointer',
                 'bg-[#F5E2D4] text-[#925E3C] hover:bg-[#F2DBC7]',
                 'dark:bg-[#2C241D] dark:text-[#F2C6A2] dark:hover:bg-[#3B2A1F]',
-                '[&_svg]:!h-5 [&_svg]:!w-5 max-md:[&_svg]:!h-5 max-md:[&_svg]:!w-5'
+                '[&_svg]:h-5! [&_svg]:w-5! max-md:[&_svg]:h-5! max-md:[&_svg]:w-5!'
               )}>
               {mounted ? (
                 resolvedTheme === 'dark' ? (
-                  <Sun />
+                  <SunIcon size={20} color='#F2C6A2'/>
                 ) : (
-                  <Moon />
+                  <MoonIcon size={20} color='#925E3C'/>
                 )
               ) : (
-                <Moon />
+                <MoonIcon size={20} color='#925E3C'/>
               )}
               <span className='sr-only'>Переключить тему</span>
             </Button>
@@ -252,11 +254,11 @@ export default function Header() {
                     type='button'
                     variant='ghost'
                     size='icon'
-                    className='cursor-pointer rounded-full bg-[#F5E2D4] text-[#925E3C] hover:bg-[#F2DBC7] dark:bg-[#2C241D] dark:text-[#F2C6A2] dark:hover:bg-[#3B2A1F] h-10 w-10 max-md:h-13 max-md:w-13 [&_svg]:!h-5 [&_svg]:!w-5'
+                    className='cursor-pointer rounded-full bg-[#F5E2D4] text-[#925E3C] hover:bg-[#F2DBC7] dark:bg-[#2C241D] dark:text-[#F2C6A2] dark:hover:bg-[#3B2A1F] h-10 w-10 max-md:h-13 max-md:w-13 [&_svg]:h-5! [&_svg]:w-5!'
                     aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
                     aria-expanded={open}
                     aria-controls='overlay-menu'>
-                    <Menu />
+                    <Menu strokeWidth={3} />
                   </Button>
                 </PopoverTrigger>
 

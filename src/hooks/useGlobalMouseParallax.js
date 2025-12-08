@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 
-// onChange({ x, y }) — x и y в диапазоне [-1; 1]
 export function useGlobalMouseParallax(onChange) {
   const frameRef = useRef(null);
   const reduceMotionQuery = useRef(null);
@@ -21,8 +20,8 @@ export function useGlobalMouseParallax(onChange) {
     const handlePointerMove = (e) => {
       if (shouldSkip()) return;
 
-      const x = (e.clientX / window.innerWidth - 0.5) * 2; // -1..1
-      const y = (e.clientY / window.innerHeight - 0.5) * 2; // -1..1
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
 
       if (!frameRef.current) {
         frameRef.current = requestAnimationFrame(() => {

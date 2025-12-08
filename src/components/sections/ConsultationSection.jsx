@@ -24,7 +24,7 @@ export function ConsultationSection() {
 
   return (
     <div className='relative'>
-      <div className='relative w-[100%] md:max-w-[1100px] m-auto'>
+      <div className='relative w-full md:max-w-[1100px] m-auto'>
         <svg
           className='absolute top-[-100px] right-[clamp(3.75rem,5.179rem+-2.976vw,2.5rem)] z-11 hidden md:block md:w-[clamp(6.875rem,4.375rem+5.208vw,9.063rem)] overflow-visible'
           width='145'
@@ -48,7 +48,7 @@ export function ConsultationSection() {
           <h2 className='mt-3 md:mt-4 font-lora uppercase font-semibold text-[#322820] dark:text-white leading-tight text-[clamp(1.75rem,1.5rem+1.25vw,2.625rem)]'>
             Индивидуальная консультация
           </h2>
-          <p className='mx-auto mt-4 md:mt-6 max-w-[576px] text-[#4E3A2C] dark:text-[#CDBBAC] leading-relaxed '>
+          <p className='mx-auto mt-4 md:mt-6 max-w-xl text-[#4E3A2C] dark:text-[#CDBBAC] leading-relaxed '>
             Работаю очно в Москве и онлайн. Удобный формат — по Zoom, Meet или в
             Telegram. После сессии сохраняю для вас ключевые выводы и
             упражнения.
@@ -76,7 +76,7 @@ export function ConsultationSection() {
           </div>
 
           <Button
-            className='w-max rounded-full px-10 md:px-12 py-4 md:py-[20px] text-[clamp(1rem,0.982rem+0.089vw,1.063rem)] font-semibold text-white transition bg-[#E08A48] hover:bg-[#CF7A39] dark:bg-[#F4B26E] dark:text-[#2B1F17] dark:hover:bg-[#F2C080] mx-auto mt-8'
+            className='w-max rounded-full px-10 md:px-12 py-4 md:py-5 text-[clamp(1rem,0.982rem+0.089vw,1.063rem)] font-semibold text-white transition bg-[#E08A48] hover:bg-[#CF7A39] dark:bg-[#F4B26E] dark:text-[#2B1F17] dark:hover:bg-[#F2C080] mx-auto mt-8'
             asChild>
             <a href='#contacts'>Связаться со мной</a>
           </Button>

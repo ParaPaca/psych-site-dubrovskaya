@@ -62,7 +62,7 @@ export function ApproachSection() {
 
   return (
     <div className='relative'>
-      <div className='relative w-[100%] md:max-w-[1100px] m-auto'>
+      <div className='relative w-full md:max-w-[1100px] m-auto'>
         <svg
           className='absolute top-[-85px] left-[clamp(3.75rem,5.179rem+-2.976vw,2.5rem)] z-11 hidden md:block md:w-[clamp(8.75rem,0.179rem+17.857vw,16.25rem)] overflow-visible'
           width='316'

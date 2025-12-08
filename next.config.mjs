@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactCompiler: true,
+  reactCompiler: true,  // оставляем
+  typedRoutes: true,    // переносим из experimental
   experimental: {
-    // PPR доступен только в canary-релизах Next.js; отключаем, чтобы билд не падал.
     ppr: false,
-    typedRoutes: true,
     optimizePackageImports: ['lucide-react'],
   },
 };

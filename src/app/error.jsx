@@ -24,7 +24,7 @@ export default function Error({ error, reset }) {
               </h1>
             </div>
 
-            <div className='max-w-[46rem] space-y-4'>
+            <div className='max-w-184 space-y-4'>
               <p className='text-[clamp(0.938rem,0.884rem+0.268vw,1.125rem)] leading-relaxed text-[#4E3A2C] dark:text-[#D4C2B9] '>
                 Произошла непредвиденная ошибка. Попробуйте обновить страницу.
               </p>

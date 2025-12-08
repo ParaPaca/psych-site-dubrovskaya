@@ -56,7 +56,7 @@ export default function Hero() {
 
   return (
     <div className='relative'>
-      <div className='relative w-[100%] md:max-w-[1100px] m-auto'>
+      <div className='relative w-full md:max-w-[1100px] m-auto'>
         <svg
           className='absolute top-[clamp(21.875rem,14.732rem+14.881vw,28.125rem)] right-[clamp(3.75rem,5.179rem+-2.976vw,2.5rem)] z-11 hidden md:block md:w-[clamp(8.75rem,3.036rem+11.905vw,13.75rem)] will-change-transform overflow-visible'
           viewBox='0 0 260 590'
@@ -98,7 +98,7 @@ export default function Hero() {
           <div className='flex flex-col gap-4 md:gap-8 xl:gap-12 md:flex-row md:items-center md:justify-between'>
             <div className='order-2 w-full md:order-1 md:w-auto'>
               <div
-                className='relative mx-auto w-[clamp(11.25rem,9.107rem+10.714vw,18.75rem)] aspect-[381/439] overflow-hidden'
+                className='relative mx-auto w-[clamp(11.25rem,9.107rem+10.714vw,18.75rem)] aspect-381/439 overflow-hidden'
                 style={{
                   maskImage: maskUrl,
                   WebkitMaskImage: maskUrl,
@@ -120,7 +120,7 @@ export default function Hero() {
             </div>
 
             <div className='contents md:flex md:flex-col md:order-2 md:flex-1 md:min-w-0'>
-              <div className='order-1 w-full text-center md:order-none md:text-left'>
+              <div className='order-1 w-full text-center md:order-0 md:text-left'>
                 <p className='mt-1 leading-normal text-[clamp(0.875rem,0.804rem+0.357vw,1.125rem)] text-[#4E3A2C] dark:text-[#D4C2B9]'>
                   <span className='block'>Клинический психолог.</span>
                   <span className='block'>КПТ, Схема-терапия, EMDR</span>
@@ -130,14 +130,14 @@ export default function Hero() {
                 </h1>
               </div>
 
-              <div className='order-3 w-full text-center md:order-none md:text-left'>
+              <div className='order-3 w-full text-center md:order-0 md:text-left'>
                 <p className='mx-auto mt-4 md:mt-6 max-w-[52ch] text-[clamp(1.063rem,1.045rem+0.089vw,1.125rem)] leading-relaxed text-[#4E3A2C] dark:text-[#D4C2B9] md:mx-0 '>
                   Помогаю людям находить опору в себе, справляться с тревогой,
                   улучшать отношения и достигать личных целей.
                 </p>
                 <div className='mt-5 md:mt-8 flex flex-col items-center gap-3 md:gap-4 md:flex-row md:items-center md:justify-start'>
                   <Button
-                    className='w-max rounded-full px-10 md:px-12 py-4 md:py-[20px] text-[clamp(1rem,0.982rem+0.089vw,1.063rem)] font-semibold text-white transition bg-[#E08A48] hover:bg-[#CF7A39] dark:bg-[#F4B26E] dark:text-[#2B1F17] dark:hover:bg-[#F2C080] md:w-auto'
+                    className='w-max rounded-full px-10 md:px-12 py-4 md:py-5 text-[clamp(1rem,0.982rem+0.089vw,1.063rem)] font-semibold text-white transition bg-[#E08A48] hover:bg-[#CF7A39] dark:bg-[#F4B26E] dark:text-[#2B1F17] dark:hover:bg-[#F2C080] md:w-auto'
                     asChild>
                     <a href='#contacts'>Связаться со мной</a>
                   </Button>

@@ -90,7 +90,7 @@ const educationItems = [
   },
 ];
 
-function EducationPathSvg({ className }) {
+function EducationPathSvg({ }) {
   return (
     <svg
       className='hidden md:block'
@@ -124,7 +124,7 @@ function EducationSection() {
             </h1>
           </div>
           <div className='flex flex-col gap-10 md:flex-row md:gap-16 lg:gap-24'>
-            <div className='md:flex-[2] md:min-w-0'>
+            <div className='md:flex-2 md:min-w-0'>
               <div className='space-y-7 md:space-y-8'>
                 {educationItems.map((item) => (
                   <article
@@ -156,7 +156,7 @@ function EducationSection() {
                 ))}
               </div>
             </div>
-            <div className='relative md:flex-[1] md:flex md:justify-center md:items-start'>
+            <div className='relative md:flex-1 md:flex md:justify-center md:items-start'>
               <div className='relative hidden h-[480px] w-full md:block lg:h-[520px]'>
                 <div className='sticky top-32 flex justify-center'>
                   <EducationPathSvg />
