@@ -41,7 +41,7 @@ const primaryDesktopItems = [
 export default function Header() {
   const pathname = usePathname();
   const [mounted, setMounted] = React.useState(false);
-  const [open, setOpen] = React.useState(false); // только для мобильного поповера
+  const [open, setOpen] = React.useState(false);
   const [hash, setHash] = React.useState('');
   const [isHidden, setIsHidden] = React.useState(false);
   const lastScrollY = React.useRef(0);
