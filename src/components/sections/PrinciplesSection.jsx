@@ -84,7 +84,9 @@ export function PrinciplesSection() {
               height='26'
               viewBox='0 0 87 26'
               fill='none'
-              xmlns='http://www.w3.org/2000/svg'>
+              xmlns='http://www.w3.org/2000/svg'
+              aria-hidden='true'
+              focusable='false'>
               <path
                 d='M83.7936 11.5003C83.7936 11.5003 62.9932 15.5003 42.9932 11.5003C22.9932 7.50032 3.00049 11.5003 3.00049 11.5003M83.7936 11.5003L73.8971 22.4039M83.7936 11.5003L71.4932 3.00022'
                 stroke='#D9642E'
@@ -105,7 +107,9 @@ export function PrinciplesSection() {
             height='104'
             viewBox='0 0 102 104'
             fill='none'
-            xmlns='http://www.w3.org/2000/svg'>
+            xmlns='http://www.w3.org/2000/svg'
+            aria-hidden='true'
+            focusable='false'>
             <path
               ref={blobRef}
               fillRule='evenodd'

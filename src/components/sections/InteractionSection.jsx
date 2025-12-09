@@ -139,7 +139,9 @@ export function InteractionSection() {
                   height='158'
                   viewBox='0 0 149 158'
                   fill='none'
-                  xmlns='http://www.w3.org/2000/svg'>
+                  xmlns='http://www.w3.org/2000/svg'
+                  aria-hidden='true'
+                  focusable='false'>
                   <path
                     ref={(el) => blobRefs.current[0] = el}
                     fillRule='evenodd'
@@ -165,7 +167,9 @@ export function InteractionSection() {
           viewBox='0 0 1100 120'
           preserveAspectRatio='xMidYMax slice'
           className='h-full w-full'
-          xmlns='http://www.w3.org/2000/svg'>
+          xmlns='http://www.w3.org/2000/svg'
+          aria-hidden='true'
+          focusable='false'>
           <path
             className='dark:fill-[#1B1B1B]'
             d='M0 241.155L0 50.129C58.2822 35.3953 116.564 20.6617 194.792 31.7905C273.019 42.9193 371.192 79.9107 455.278 67.7033C539.364 55.496 609.364 -5.9101 676.806 0.462298C744.247 6.83469 809.13 80.9855 879.236 100.56C949.342 120.134 1024.67 85.1314 1100 50.129V241.155H0Z'

@@ -51,7 +51,9 @@ export function ContactsSection() {
           height='218'
           viewBox='0 0 179 218'
           fill='none'
-          xmlns='http://www.w3.org/2000/svg'>
+          xmlns='http://www.w3.org/2000/svg'
+          aria-hidden='true'
+          focusable='false'>
           <path
             ref={(el) => (blobRefs.current[0] = el)}
             fillRule='evenodd'
@@ -107,7 +109,8 @@ export function ContactsSection() {
             viewBox='0 0 1100 120'
             preserveAspectRatio='xMidYMax slice'
             className='h-full w-full'
-            xmlns='http://www.w3.org/2000/svg'>
+            xmlns='http://www.w3.org/2000/svg'
+            focusable='false'>
             <path
               className='dark:fill-[#000000]'
               d='M0 122.022V23.8078C46.1918 13.2801 92.3836 2.75246 151.25 1.41491C210.116 0.077357 281.657 7.92991 332.292 6.91491C382.926 5.8999 412.653 -3.98266 458.333 1.80776C504.013 7.59819 565.646 29.0616 630.208 31.2721C694.77 33.4825 762.262 16.44 812.014 7.70062C861.766 -1.03873 893.778 -1.47491 938.819 2.59348C983.861 6.66186 1041.93 15.2348 1100 23.8078V122.022H0Z'

@@ -69,7 +69,9 @@ export function ApproachSection() {
           height='278'
           viewBox='0 0 316 278'
           fill='none'
-          xmlns='http://www.w3.org/2000/svg'>
+          xmlns='http://www.w3.org/2000/svg'
+          aria-hidden='true'
+          focusable='false'>
           <path
             ref={(el) => (blobRefs.current[0] = el)}
             fillRule='evenodd'
@@ -94,7 +96,9 @@ export function ApproachSection() {
             viewBox='0 0 1100 120'
             preserveAspectRatio='xMidYMax slice'
             className='h-full w-full'
-            xmlns='http://www.w3.org/2000/svg'>
+            xmlns='http://www.w3.org/2000/svg'
+            aria-hidden='true'
+            focusable='false'>
             <path
               className='dark:fill-[#1B1B1B]'
               d='M1100 -121V70.0256C1041.72 84.7592 983.436 99.4929 905.208 88.364C826.981 77.2352 728.808 40.2439 644.722 52.4512C560.636 64.6586 490.636 126.065 423.194 119.692C355.753 113.32 290.87 39.169 220.764 19.5948C150.658 0.0206146 75.329 35.0231 0 70.0256V-121L1100 -121Z'

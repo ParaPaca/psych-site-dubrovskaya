@@ -153,7 +153,8 @@ export default function Hero() {
             viewBox='0 0 1100 105'
             preserveAspectRatio='xMidYMax meet'
             className='h-full w-full block'
-            xmlns='http://www.w3.org/2000/svg'>
+            xmlns='http://www.w3.org/2000/svg'
+            focusable='false'>
             <g clipPath='url(#clip0_36_357)'>
               <path
                 className='dark:fill-[#1B1B1B]'

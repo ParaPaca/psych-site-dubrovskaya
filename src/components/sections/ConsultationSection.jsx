@@ -31,7 +31,9 @@ export function ConsultationSection() {
           height='144'
           viewBox='0 0 145 144'
           fill='none'
-          xmlns='http://www.w3.org/2000/svg'>
+          xmlns='http://www.w3.org/2000/svg'
+          aria-hidden='true'
+          focusable='false'>
           <path
             ref={blobRef}
             fillRule='evenodd'

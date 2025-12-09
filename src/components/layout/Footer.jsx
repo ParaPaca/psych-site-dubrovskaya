@@ -111,7 +111,9 @@ export function Footer() {
           viewBox='0 0 209 170'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
-          loading='lazy'>
+          loading='lazy'
+          aria-hidden='true'
+          focusable='false'>
           <path
             ref={blobRef}
             fillRule='evenodd'
