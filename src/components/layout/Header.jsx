@@ -233,7 +233,7 @@ export default function Header() {
                 'h-10 w-10 max-md:h-13 max-md:w-13 rounded-full cursor-pointer',
                 'bg-[#F5E2D4] text-[#925E3C] hover:bg-[#F2DBC7]',
                 'dark:bg-[#2C241D] dark:text-[#F2C6A2] dark:hover:bg-[#3B2A1F]',
-                '[&_svg]:h-5! [&_svg]:w-5! max-md:[&_svg]:h-5! max-md:[&_svg]:w-5!'
+                '[&_svg]:h-4! [&_svg]:w-4! max-md:[&_svg]:h-5! max-md:[&_svg]:w-5!'
               )}>
               {mounted ? (
                 resolvedTheme === 'dark' ? (

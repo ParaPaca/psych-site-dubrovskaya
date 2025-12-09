@@ -64,10 +64,10 @@ export function Footer() {
           <div className='flex flex-col items-center gap-3 md:gap-4 max-md:order-1'>
             <div className='relative overflow-hidden rounded-full h-[clamp(7.063rem,6.402rem+3.304vw,9.375rem)] w-[clamp(7.063rem,6.402rem+3.304vw,9.375rem)]'>
               <Image
-                src='/photoSmall.jpg'
+                src='/photoSmall.png'
                 alt='Яна Дубровская'
                 fill
-                className='object-cover'
+                className='object-cover bg-[#F5E7DE]'
               />
             </div>
             <div className='flex justify-center items-center gap-2 md:gap-3'>

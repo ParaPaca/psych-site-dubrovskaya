@@ -113,7 +113,7 @@ export default function Hero() {
                   src='/photoBig.png'
                   alt='Яна Дубровская'
                   fill
-                  className='object-cover'
+                  className='object-cover bg-[#F5E7DE]'
                   priority
                 />
               </div>
