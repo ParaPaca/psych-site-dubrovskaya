@@ -85,11 +85,13 @@ export function ContactsSection() {
             <Button
               key={label}
               asChild
-              className='min-w-[172px] group h-auto rounded-full bg-white/95 px-5 md:px-8 py-3 md:py-4 text-md font-semibold text-[#3B2C21] shadow-[0_16px_38px_rgba(160,92,51,0.1)] transition hover:-translate-y-px hover:text-[#ffffff] hover:bg-[#E2823A] dark:bg-[#000000]/50 dark:text-[#F5E5DA] dark:hover:bg-[#34261D]'
+              className='min-w-[172px] group h-auto rounded-full bg-white/95 px-5 md:px-8 py-3 md:py-4 text-md font-semibold text-[#3B2C21] shadow-[0_16px_38px_rgba(160,92,51,0.1)] transition hover:-translate-y-px hover:text-[#ffffff] hover:bg-[#E2823A] dark:bg-[#000000]/50 dark:text-[#F5E5DA] dark:hover:bg-[#34261D] [&_svg]:h-5! [&_svg]:w-5! max-md:[&_svg]:h-5! max-md:[&_svg]:w-5!'
               variant='ghost'>
               <a href={href} target='_blank' rel='noreferrer'>
                 <span className='flex items-center gap-3'>
-                  <Icon className='group-hover:text-[#ffffff] transition h-[clamp(1rem,0.929rem+0.357vw,1.25rem)] w-[clamp(1rem,0.929rem+0.357vw,1.25rem)] text-[#E17737] dark:text-[#F2C6A2]' />
+                  <Icon
+                    className='group-hover:text-[#ffffff] transition h-[clamp(1rem,0.929rem+0.357vw,1.25rem)] w-[clamp(1rem,0.929rem+0.357vw,1.25rem)] text-[#E17737] dark:text-[#F2C6A2]'
+                  />
                   {label}
                 </span>
               </a>

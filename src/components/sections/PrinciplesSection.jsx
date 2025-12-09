@@ -29,12 +29,12 @@ const principles = {
 
 function Card({ title, description }) {
   return (
-    <div className='group relative overflow-hidden rounded-3xl max-md:rounded-xl bg-white/95 p-4 md:p-6 transition hover:-translate-y-0.5 hover:shadow-[0_15px_30px_rgba(160,92,51,0.35)] dark:bg-[#000000] shadow-[0_15px_30px_rgba(160,92,51,0.2)] backdrop-blur'>
+    <div className='group relative overflow-hidden rounded-3xl max-md:rounded-xl bg-white/95 p-4 md:p-6 transition md:hover:-translate-y-0.5 md:hover:shadow-[0_15px_30px_rgba(160,92,51,0.35)] dark:bg-[#000000] shadow-[0_15px_30px_rgba(160,92,51,0.2)] backdrop-blur text-balance'>
       <div className='absolute inset-x-6 top-0 h-1 rounded-b-full bg-linear-to-r from-[#F4A35F] via-[#E97737] to-[#C66A44] opacity-80' />
       <h3 className='font-lora font-semibold text-[#3B2C21] dark:text-[#F5E5DA] text-[clamp(1.125rem,1.089rem+0.179vw,1.25rem)] leading-tight'>
         {title}
       </h3>
-      <p className='mt-2 md:mt-3 text-[#4E3A2C] dark:text-[#D4C2B9] leading-relaxed '>
+      <p className='mt-2 md:mt-3 text-[#4E3A2C] dark:text-[#D4C2B9] leading-relaxed'>
         {description}
       </p>
     </div>
