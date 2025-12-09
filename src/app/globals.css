@@ -160,12 +160,31 @@
   }
 }
 
-html, body {
-  outline: transparent;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   html, body {
     scroll-behavior: smooth;
   }
+}
+
+:focus-visible {
+  outline: 2px solid #E08A48;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -100px;
+  z-index: 100;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #E08A48;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease, transform 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  top: 12px;
+  transform: translateY(0);
 }
