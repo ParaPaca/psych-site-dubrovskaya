@@ -1,11 +1,12 @@
+// eslint-disable-next-line react-refresh/only-export-components
 'use client';
 
 import Image from 'next/image';
-import { SectionContainer } from '@/components/shared/SectionContainer';
 import { useRef, useCallback } from 'react';
-import { useGlobalMouseParallax } from '@/hooks/useGlobalMouseParallax';
+import { SectionContainer } from '@/components/shared/SectionContainer';
 import WhatsAppIcon from '../shared/WhatsAppIcon';
 import TelegramIcon from '../shared/TelegramIcon';
+import { useGlobalMouseParallax } from '@/hooks/useGlobalMouseParallax';
 
 const nav = [
   { label: 'Главная', href: '/', strong: true },
@@ -67,7 +68,8 @@ export function Footer() {
                 src='/photoSmall.png'
                 alt='Яна Дубровская'
                 fill
-                className='object-cover bg-[#F5E7DE]'
+                sizes="(min-width: 768px) 150px, 120px"
+                className='object-cover bg-[#F5E7DE] dark:bg-[#0F0D0C]'
               />
             </div>
             <div className='flex justify-center items-center gap-2 md:gap-3'>

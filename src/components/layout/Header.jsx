@@ -8,11 +8,6 @@ import { Menu, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-} from '@/components/ui/popover';
-import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
@@ -20,6 +15,11 @@ import {
   NavigationMenuContent,
   NavigationMenuLink,
 } from '@/components/ui/navigation-menu';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 import Logo from '../shared/Logo';
 import MoonIcon from '../shared/MoonIcon';
 import SunIcon from '../shared/SunIcon';
@@ -45,6 +45,9 @@ export default function Header() {
   const [hash, setHash] = React.useState('');
   const [isHidden, setIsHidden] = React.useState(false);
   const lastScrollY = React.useRef(0);
+  const triggerRef = React.useRef(null);
+  const menuRef = React.useRef(null);
+  const prevFocusRef = React.useRef(null);
   const { resolvedTheme, setTheme } = useTheme();
 
   React.useEffect(() => {
@@ -138,6 +141,60 @@ export default function Header() {
     isActive(item.href)
   );
 
+  React.useEffect(() => {
+    if (!open) {
+      if (prevFocusRef.current && 'focus' in prevFocusRef.current) {
+        prevFocusRef.current.focus();
+      } else {
+        triggerRef.current?.focus();
+      }
+      return;
+    }
+
+    const container = menuRef.current;
+    if (!container) return;
+
+    const focusable = container.querySelectorAll(
+      'a, button, [tabindex]:not([tabindex="-1"])'
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    first?.focus();
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+      }
+      if (e.key === 'Tab' && focusable.length > 0) {
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    const handleClickOutside = (e) => {
+      if (!menuRef.current) return;
+      if (
+        !menuRef.current.contains(e.target) &&
+        !triggerRef.current?.contains(e.target)
+      ) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [open]);
+
   return (
     <header
       className={cn(
@@ -181,7 +238,6 @@ export default function Header() {
                     className={cn(
                       'border-0 bg-transparent px-0 py-0 cursor-pointer',
                       'hover:bg-transparent! focus:bg-transparent! data-[state=open]:bg-transparent! data-[state=open]:text-[#E17737]!',
-                      'focus-visible:ring-0 focus-visible:outline-none',
                       'text-[clamp(0.813rem,0.795rem+0.089vw,0.875rem)] tracking-[0.18em] font-medium',
                       'text-[#7E6352] hover:text-[#E17737]',
                       'dark:text-[#DCC8BC]/90! dark:hover:text-[#F4B26E]!',
@@ -257,15 +313,23 @@ export default function Header() {
                     className='cursor-pointer rounded-full bg-[#F5E2D4] text-[#925E3C] hover:bg-[#F2DBC7] dark:bg-[#2C241D] dark:text-[#F2C6A2] dark:hover:bg-[#3B2A1F] h-10 w-10 max-md:h-13 max-md:w-13 [&_svg]:h-5! [&_svg]:w-5!'
                     aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
                     aria-expanded={open}
-                    aria-controls='overlay-menu'>
+                    aria-controls='overlay-menu'
+                    ref={triggerRef}
+                    onClick={() => {
+                      prevFocusRef.current = document.activeElement;
+                    }}>
                     <Menu strokeWidth={3} />
                   </Button>
                 </PopoverTrigger>
 
                 <PopoverContent
                   id='overlay-menu'
+                  role='dialog'
+                  aria-modal='true'
+                  aria-label='Мобильное меню'
                   align='end'
                   sideOffset={8}
+                  ref={menuRef}
                   className={cn(
                     'w-[min(95vw,250px)]',
                     'rounded-2xl border-0',
@@ -305,6 +369,9 @@ export default function Header() {
             </div>
           </div>
         </div>
+      </div>
+      <div aria-live='polite' className='sr-only'>
+        {open ? 'Мобильное меню открыто' : 'Мобильное меню закрыто'}
       </div>
     </header>
   );

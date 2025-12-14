@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef, useCallback } from 'react';
 import { SectionContainer } from '@/components/shared/SectionContainer';
+import { useRef, useCallback } from 'react';
 import { useGlobalMouseParallax } from '@/hooks/useGlobalMouseParallax';
 
 const principles = {
@@ -29,7 +29,7 @@ const principles = {
 
 function Card({ title, description }) {
   return (
-    <div className='group relative overflow-hidden rounded-3xl max-md:rounded-xl bg-white/95 p-4 md:p-6 transition md:hover:-translate-y-0.5 md:hover:shadow-[0_15px_30px_rgba(160,92,51,0.35)] dark:bg-[#000000] shadow-[0_15px_30px_rgba(160,92,51,0.2)] backdrop-blur text-balance'>
+    <div className='group relative overflow-hidden rounded-3xl max-md:rounded-xl bg-white/95 p-4 md:p-6 transition md:hover:-translate-y-0.5 md:hover:shadow-[0_15px_30px_rgba(160,92,51,0.35)] dark:bg-[#000000] shadow-[0_10px_25px_rgba(160,92,51,0.2)] backdrop-blur text-balance'>
       <div className='absolute inset-x-6 top-0 h-1 rounded-b-full bg-linear-to-r from-[#F4A35F] via-[#E97737] to-[#C66A44] opacity-80' />
       <h3 className='font-lora font-semibold text-[#3B2C21] dark:text-[#F5E5DA] text-[clamp(1.125rem,1.089rem+0.179vw,1.25rem)] leading-tight'>
         {title}
@@ -43,7 +43,6 @@ function Card({ title, description }) {
 
 export function PrinciplesSection() {
   const { confidentiality, openness, nonjudgment, individual } = principles;
-
   const blobRef = useRef(null);
 
   const handleParallax = useCallback(({ x, y }) => {
@@ -101,12 +100,12 @@ export function PrinciplesSection() {
       <div className='relative mt-14 hidden md:grid md:grid-cols-2 md:gap-6 xl:gap-8'>
         <Card {...confidentiality} />
         <div>
-          <svg
-            className='absolute top-[-30px] right-[50px] z-11 hidden md:block md:w-[clamp(5rem,3.571rem+2.976vw,6.25rem)] overflow-visible'
-            width='102'
-            height='104'
-            viewBox='0 0 102 104'
-            fill='none'
+            <svg
+              className='absolute top-[-30px] right-[50px] z-11 hidden md:block md:w-[clamp(5rem,3.571rem+2.976vw,6.25rem)] overflow-visible'
+              width='102'
+              height='104'
+              viewBox='0 0 102 104'
+              fill='none'
             xmlns='http://www.w3.org/2000/svg'
             aria-hidden='true'
             focusable='false'>

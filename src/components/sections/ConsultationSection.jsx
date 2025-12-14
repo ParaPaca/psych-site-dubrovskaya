@@ -1,48 +1,12 @@
-'use client';
-
-import { useRef, useCallback } from 'react';
 import { SectionContainer } from '@/components/shared/SectionContainer';
 import { Button } from '@/components/ui/button';
 import { Video } from 'lucide-react';
-import { useGlobalMouseParallax } from '@/hooks/useGlobalMouseParallax';
+import { ConsultationBlob } from './ConsultationBlob';
 
 export function ConsultationSection() {
-  const blobRef = useRef(null);
-
-  const handleParallax = useCallback(({ x, y }) => {
-    const shiftX = 10;
-    const shiftY = -20;
-    if (blobRef.current) {
-      blobRef.current.style.transform = `translate3d(${x * shiftX}px, ${
-        y * shiftY
-      }px, 0)`;
-      blobRef.current.style.transformOrigin = '50% 50%';
-    }
-  }, []);
-
-  useGlobalMouseParallax(handleParallax);
-
   return (
     <div className='relative'>
-      <div className='relative w-full md:max-w-[1100px] m-auto'>
-        <svg
-          className='absolute top-[-100px] right-[clamp(3.75rem,5.179rem+-2.976vw,2.5rem)] z-11 hidden md:block md:w-[clamp(6.875rem,4.375rem+5.208vw,9.063rem)] overflow-visible'
-          width='145'
-          height='144'
-          viewBox='0 0 145 144'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-          aria-hidden='true'
-          focusable='false'>
-          <path
-            ref={blobRef}
-            fillRule='evenodd'
-            clipRule='evenodd'
-            d='M143.03 55.8253C136.266 39.5185 109.867 47.9047 95.1979 38.048C80.3857 28.095 78.0285 2.29346 60.2858 0.226117C41.1269 -2.00623 23.401 12.6521 12.2729 28.3857C0.877116 44.4979 -1.66604 64.6061 0.931741 84.1447C3.74008 105.267 8.21474 129.847 27.0868 139.805C45.411 149.474 66.7772 136.903 85.951 129.006C100.41 123.051 111.701 113.316 121.309 100.998C131.997 87.2953 149.679 71.8565 143.03 55.8253Z'
-            fill='#E2823B'
-          />
-        </svg>
-      </div>
+      <ConsultationBlob />
       <SectionContainer
         id='pricing'
         className='relative bg-[#FFF3EC] dark:bg-[#1B1B1B] max-md:pt-14 max-md:pb-20 md:pb-40 xl:pb-20 md:pt-10'>
@@ -57,11 +21,15 @@ export function ConsultationSection() {
           </p>
         </div>
 
-        <div className='flex flex-col mx-auto mt-8 md:mt-12 w-full max-w-[640px] rounded-[36px] bg-white/95 p-5 md:p-8 shadow-[0_15px_30px_rgba(160,92,51,0.2)] dark:bg-[#000000]/50'>
+        <div className='flex flex-col mx-auto mt-8 md:mt-12 w-full max-w-[640px] rounded-[36px] bg-white/95 p-5 md:p-8 shadow-[0_15px_30px_rgba(160,92,51,0.2)] dark:bg-[#0E0E0E]'>
           <div className='flex flex-col items-center gap-4 md:gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left'>
             <div>
               <div className='flex items-center justify-center md:justify-start gap-2 md:gap-3'>
-                <Video className='h-[clamp(1.125rem,1.018rem+0.536vw,1.5rem)] w-[clamp(1.125rem,1.018rem+0.536vw,1.5rem)] text-[#E17737] dark:text-[#F2C6A2]' />
+                <Video
+                  className='h-[clamp(1.125rem,1.018rem+0.536vw,1.5rem)] w-[clamp(1.125rem,1.018rem+0.536vw,1.5rem)] text-[#E17737] dark:text-[#F2C6A2]'
+                  strokeWidth={0}
+                  fill='currentColor'
+                />
                 <h3 className='font-lora font-semibold text-[#3B2C21] dark:text-[#F5E5DA] text-[clamp(1.125rem,1.089rem+0.179vw,1.25rem)] leading-tight'>
                   Онлайн-формат
                 </h3>

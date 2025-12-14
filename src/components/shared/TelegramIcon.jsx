@@ -1,4 +1,4 @@
-export default function TelegramIcon({ className = '', size = '' }) {
+export default function TelegramIcon({ className = '', size = 24 }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

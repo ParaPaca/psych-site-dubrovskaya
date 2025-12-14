@@ -1,7 +1,6 @@
-'use client'
+'use client';
 
 import { useRef, useCallback } from 'react';
-
 import { SectionContainer } from '@/components/shared/SectionContainer';
 import { useGlobalMouseParallax } from '@/hooks/useGlobalMouseParallax';
 
