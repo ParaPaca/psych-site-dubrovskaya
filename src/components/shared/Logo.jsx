@@ -5,6 +5,7 @@ export default function Logo({ className = '', ...props }) {
       fill='none'
       viewBox='0 0 96 96'
       aria-hidden='true'
+      focusable='false'
       className={className}
       {...props}>
       <g fillRule='evenodd' clipRule='evenodd'>

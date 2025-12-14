@@ -1,11 +1,12 @@
+// eslint-disable-next-line react-refresh/only-export-components
 'use client';
 
 import Image from 'next/image';
-import { SectionContainer } from '@/components/shared/SectionContainer';
 import { useRef, useCallback } from 'react';
-import { useGlobalMouseParallax } from '@/hooks/useGlobalMouseParallax';
+import { SectionContainer } from '@/components/shared/SectionContainer';
 import WhatsAppIcon from '../shared/WhatsAppIcon';
 import TelegramIcon from '../shared/TelegramIcon';
+import { useGlobalMouseParallax } from '@/hooks/useGlobalMouseParallax';
 
 const nav = [
   { label: 'Главная', href: '/', strong: true },
@@ -64,10 +65,11 @@ export function Footer() {
           <div className='flex flex-col items-center gap-3 md:gap-4 max-md:order-1'>
             <div className='relative overflow-hidden rounded-full h-[clamp(7.063rem,6.402rem+3.304vw,9.375rem)] w-[clamp(7.063rem,6.402rem+3.304vw,9.375rem)]'>
               <Image
-                src='/photoSmall.jpg'
+                src='/photoSmall.png'
                 alt='Яна Дубровская'
                 fill
-                className='object-cover'
+                sizes="(min-width: 768px) 150px, 120px"
+                className='object-cover bg-[#F5E7DE] dark:bg-[#0F0D0C]'
               />
             </div>
             <div className='flex justify-center items-center gap-2 md:gap-3'>
@@ -111,7 +113,9 @@ export function Footer() {
           viewBox='0 0 209 170'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
-          loading='lazy'>
+          loading='lazy'
+          aria-hidden='true'
+          focusable='false'>
           <path
             ref={blobRef}
             fillRule='evenodd'

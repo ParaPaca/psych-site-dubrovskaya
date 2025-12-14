@@ -38,6 +38,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang='ru' suppressHydrationWarning>
       <body className={`${inter.variable} ${lora.variable} antialiased`}>
+        <a className='skip-link' href='#main'>
+          Перейти к основному содержимому
+        </a>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
