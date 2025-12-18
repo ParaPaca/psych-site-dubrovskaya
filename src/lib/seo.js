@@ -1,7 +1,9 @@
-const defaultUrl =
 // TODO: проставить потом реальный урл
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-  'http://localhost:3000';
+const defaultUrl =
+  (
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    'https://psych-site-dubrovskaya.vercel.app'
+  ).replace(/\/$/, '') || 'http://localhost:3000';
 
 export const seoConfig = {
   siteUrl: defaultUrl,
