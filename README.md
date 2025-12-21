@@ -1,37 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Психолог Яна Дубровская — сайт визитка
 
-## Getting Started
+Веб‑сайт клинического психолога: статические страницы «Главная», «Образование», «Информированное согласие», «FAQ». Используются интерактивные эффекты (параллакс блобов), светлая/тёмная тема, статичный OG, а также якорная навигация с главной.
 
-First, run the development server:
+## Технологии
+- **Next.js 16 (app router, React 19, Turbopack)** — SPA/PWA‑опыт с SSR/SSG.
+- **Tailwind CSS 4** + кастомные шрифты (Inter, Lora).
+- **Radix UI** (navigation menu, popover/accordion), **lucide-react** (иконки).
+- **next-themes** (переключатель светлой/тёмной темы).
 
+## Запуск и сборка
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev      # локальная разработка (turbopack)
+npm run build    # продакшен‑сборка
+npm start        # запуск продакшен‑сборки
+npm run lint     # ESLint (a11y включён)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Переменные окружения
+- `NEXT_PUBLIC_SITE_URL` — базовый URL сайта (например, `https://psych-site-dubrovskaya.vercel.app`). Нужен для корректных OG/каноникал ссылок и sitemap/robots.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## OG и статика
+- Статичная OG‑картинка лежит в `public/opengraph-image.png`. Метаданные используют путь `https://<SITE_URL>/opengraph-image.png`.
+- Другие статические файлы: `public/photoBig.png`, `public/photoSmall.png`, PDF согласия в `public/`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Структура
+- `src/app` — маршруты (страницы `/`, `/main`, `/education`, `/consent`, `/faq`, `opengraph-image.js` для динамики, sitemap/robots).
+- `src/components` — layout, секции, UI (Radix), shared компоненты (SectionContainer/PageSection, иконки).
+- `src/hooks` — хук глобального параллакса.
+- `src/lib/seo.js` — сборка метаданных (OG/Twitter, canonical).
 
-## Learn More
+## Особенности и доступность
+- Хедер/футер содержат якорные ссылки на секции главной; активные состояния и `aria` настроены.
+- Фокус видимый (`:focus-visible`), есть skip‑link к `#main`.
+- Мобильное меню — Popover с фокус‑трапом и закрытием по Escape/клику вне.
+- Декоративные SVG помечены `aria-hidden`/`focusable="false"`.
 
-To learn more about Next.js, take a look at the following resources:
+## Проверка качества
+- ESLint с `next/core-web-vitals` + `eslint-plugin-jsx-a11y`.
+- Следить за предупреждениями `next/image`: у `fill` картинок заданы `sizes` или разумные `width/height`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-psych-site-dubrovskaya
+## Деплой
+- Vercel (рекомендуется). После деплоя обнови `NEXT_PUBLIC_SITE_URL` в настройках проекта, очисти OG‑кэш (Facebook/LinkedIn) при смене картинки.
