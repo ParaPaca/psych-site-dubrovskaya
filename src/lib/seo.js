@@ -10,7 +10,7 @@ export const seoConfig = {
   defaultTitle: 'Яна Дубровская — клинический психолог',
   defaultDescription:
     'Помогаю справляться с тревогой и стрессом, выстраивать отношения, находить опору в себе и достигать целей.',
-  ogPath: '/opengraph-image',
+  ogPath: '/opengraph-image.png', // статичный файл в public
 };
 
 export function getMetadataBase() {
